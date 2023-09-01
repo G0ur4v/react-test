@@ -6,3 +6,9 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('renders list of fruits', () => {
+  render(<App />);
+  const listElement = screen.getAllByRole("listitem");
+  expect(listElement).toHaveLength(4);
+});
